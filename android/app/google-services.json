@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "570394682961",
+    "firebase_url": "https://rasid-cam-default-rtdb.firebaseio.com",
+    "project_id": "rasid-cam",
+    "storage_bucket": "rasid-cam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570394682961:android:98bc4a5d325e3784663a70",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7bMl8OlXs5oh6b0OMHckqcw1YSd4t6yE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
