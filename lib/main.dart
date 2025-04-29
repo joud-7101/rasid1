@@ -43,8 +43,7 @@ class MyApp extends StatelessWidget {
         ServiceToViewSentViolationsPage.screenRoute: (context) =>
             const ServiceToViewSentViolationsPage(),
       },
-      initialRoute: HomePage.screenRoute, // اجعل HomePage هي الصفحة الأولى
-      // home: const LoginPage(), // تم إلغاء تعليق هذا السطر
+      initialRoute: HomePage.screenRoute,
     );
   }
 }

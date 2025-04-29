@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart'; // تأكد من استيراد صفحة HomePage
+import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -19,7 +19,6 @@ class _LoginPageState extends State<LoginPage> {
       body: Center(
         child: GestureDetector(
           onTap: () {
-            // الانتقال إلى صفحة HomePage
             Navigator.pushNamed(context, HomePage.screenRoute);
           },
           child: Text(

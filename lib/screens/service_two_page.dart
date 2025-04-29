@@ -237,7 +237,7 @@ class _ServiceSendViolationsPageState extends State<ServiceSendViolationsPage> {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(12.0),
-        child: WebImageWidget(imageUrl), // Replaced here
+        child: WebImageWidget(imageUrl),
       ),
     );
   }

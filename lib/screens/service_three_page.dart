@@ -3,7 +3,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:rasid/widgets/navbar_top.dart';
 import 'package:rasid/widgets/navbar_bottom.dart';
 
-// خدمة عرض المخالفات المرسلة
 class ServiceToViewSentViolationsPage extends StatefulWidget {
   const ServiceToViewSentViolationsPage({super.key});
   static const String screenRoute = 'service_view_sent_violations';
@@ -42,7 +41,7 @@ class _ServiceToViewSentViolationsPageState
             'violationDetails': value['violationDetails'],
           });
         });
-        setState(() {}); // تحديث الواجهة بعد جلب البيانات
+        setState(() {}); // Update the UI with the fetched data
       } else {
         print('No sent violations found.');
       }

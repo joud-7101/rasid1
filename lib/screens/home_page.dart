@@ -13,12 +13,6 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-// ألوان
-// F7FDF9
-// D2D6DB: رمادي حدود الكارد
-// F7F6F6: رمادي إذا لم يضغط الزر
-// 0xFFF7FDF9: أخضر فاتح
-
 // 1-ServiceToSeeViolationsPage --> service_see_violations
 // 2-ServiceSendViolationsPage --> service_send_violations
 // 3-ServiceToViewSentViolationsPage --> service_view_sent_violations
@@ -46,19 +40,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const NavBarTop(),
-            _buildWelcomeText(),
-            // _buildDivider(),
-            _buildServiceCards(),
-            const NavBarBottom(),
-          ],
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const NavBarTop(),
+              _buildWelcomeText(),
+              _buildServiceCards(),
+            ],
+          ),
         ),
-      ),
-    );
+        bottomNavigationBar: const NavBarBottom());
   }
 
   Widget _buildDivider() {
@@ -83,7 +75,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           SizedBox(height: 10),
           Text(
-            'مرحبًا بك مرة أخرى، راصد يرحب بك',
+            'مرحبًا بك مرة أخرى، حازم يرحب بك',
             style: TextStyle(color: Colors.grey, fontSize: 12),
             textAlign: TextAlign.right,
           ),
@@ -96,7 +88,7 @@ class _HomePageState extends State<HomePage> {
           ),
           SizedBox(height: 10),
           Text(
-            'هنا الخدمات المقدمة من قبل راصد يمكنك رؤية المخالفات المرصودة مباشرةً ورفع المخالفات ورؤية المخالفات التي تم إرسالها, اضغط على تقديم الخدمة لتتمكن من استخدام الخدمة',
+            'هنا الخدمات المقدمة من قبل حازم, يمكنك رؤية المخالفات المرصودة مباشرةً ورفع المخالفات ورؤية المخالفات التي تم إرسالها, اضغط على تقديم الخدمة لتتمكن من استخدام الخدمة',
             style: TextStyle(fontSize: 16, color: Colors.black),
             textAlign: TextAlign.right,
           ),
@@ -148,7 +140,7 @@ class ServiceCard extends StatefulWidget {
   final String description;
   final Color color;
   final VoidCallback onTap;
-  final bool isActive; // إضافة متغير لتحديد ما إذا كانت الخدمة نشطة
+  final bool isActive;
 
   const ServiceCard({
     Key? key,
@@ -164,8 +156,7 @@ class ServiceCard extends StatefulWidget {
 }
 
 class _ServiceCardState extends State<ServiceCard> {
-  bool _isHovering = false; // متغير لتتبع حالة المرور
-
+  bool _isHovering = false;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -180,7 +171,7 @@ class _ServiceCardState extends State<ServiceCard> {
           border: Border.all(color: const Color(0xFFD2D6DB), width: 1),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween, // توزيع العناصر
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _buildServiceCardContent(),
             _buildServiceButton(),
@@ -219,20 +210,20 @@ class _ServiceCardState extends State<ServiceCard> {
     return MouseRegion(
       onEnter: (_) {
         setState(() {
-          _isHovering = true; // تعيين الحالة إلى true عند المرور
+          _isHovering = true;
         });
       },
       onExit: (_) {
         setState(() {
-          _isHovering = false; // تعيين الحالة إلى false عند الخروج
+          _isHovering = false;
         });
       },
       child: ElevatedButton(
         onPressed: widget.onTap,
         style: ElevatedButton.styleFrom(
           backgroundColor: _isHovering || widget.isActive
-              ? const Color(0xFF1B8354) // اللون عند المرور
-              : const Color(0xFFD2D6DB), // اللون الافتراضي
+              ? const Color(0xFF1B8354)
+              : const Color(0xFFD2D6DB),
           foregroundColor: Colors.white,
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
           shape: RoundedRectangleBorder(
